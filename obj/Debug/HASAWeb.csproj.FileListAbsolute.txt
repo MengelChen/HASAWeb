@@ -27,3 +27,4 @@ E:\Visual Studio 2013\Projects\HASAWeb\HASAWeb\bin\EntityFramework.dll
 E:\Visual Studio 2013\Projects\HASAWeb\HASAWeb\bin\EntityFramework.SqlServer.dll
 E:\Visual Studio 2013\Projects\HASAWeb\HASAWeb\bin\EntityFramework.xml
 E:\Visual Studio 2013\Projects\HASAWeb\HASAWeb\bin\EntityFramework.SqlServer.xml
+E:\Visual Studio 2013\Projects\HASAWeb\HASAWeb\obj\Debug\HASAWeb.csprojResolveAssemblyReference.cache

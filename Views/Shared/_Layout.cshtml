@@ -3,28 +3,36 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" type="text/css" href="~/Content/_Layout.css"/>
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <script type="text/javascript">
+        function img_change(imgId, route) {
+            //alert($('img #1').attr('src'));
+            $('#'+imgId).attr('src', function () { return route });
+            //alert($('img #1').attr('src'));
+        }
+    </script>
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("News", "News", "Home")</li>
-                </ul>
-            </div>
+    <div id="logo">
+        <img src="~/Content/LOGO.png"/>
+    </div>
+    <div id="columns">
+        <div class="column">
+            <img id="1" src="~/Content/About_CH.png" onmouseover="img_change('1', '/Content/About_CH_hover.png')" onmouseout="img_change('1', '/Content/About_CH.png')"/>
+        </div>
+        <div class="column">
+            <img id="2" src="~/Content/News_CH.png" onmouseover="img_change('2','/Content/News_CH_hover.png')" onmouseout="img_change('2', '/Content/News_CH.png')" />
+        </div>
+        <div class="column">
+            <img id="3" src="~/Content/Archive_CH.png" style="width:22%" onmouseover="img_change('3', '/Content/Archive_CH_hover.png')" onmouseout="    img_change('3', '/Content/Archive_CH.png')" />
+        </div>
+        <div class="column">
+            <img id="4" src="~/Content/Experience_CH.png" onmouseover="img_change('4', '/Content/Experience_CH_hover.png')" onmouseout="    img_change('4', '/Content/Experience_CH.png')" />
+        </div>
+        <div class="column">
+            <img id="5" src="~/Content/JoinUs_CH.png" onmouseover="img_change('5', '/Content/JoinUs_CH_hover.png')" onmouseout="    img_change('5', '/Content/JoinUs_CH.png')" />
         </div>
     </div>
     <div class="container body-content">

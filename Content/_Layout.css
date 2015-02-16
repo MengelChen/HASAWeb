@@ -1,2 +1,18 @@
 ﻿body {
 }
+
+#logo {
+    text-align:center;
+}
+
+    #logo img {
+        max-height:180px;
+    }
+
+.column{
+    display:inline;
+}
+
+.column img{
+    width:19%;
+}
