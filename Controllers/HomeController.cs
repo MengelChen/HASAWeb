@@ -11,21 +11,6 @@ namespace HASAWeb.Controllers
     {
         public ActionResult Index()
         {
-            /*ManageDBContext MDB = new ManageDBContext();
-            MDB.Database.Create();
-            Admin ad = new Admin();
-            ad.AdminId = 1;
-            ad.Name = "a";
-            ad.Password = "b";
-            ad.Username = "c";
-            try
-            {
-                MDB.Admins.Add(ad);
-            }
-            catch
-            {
-                ViewData["DB"] = "error";
-            }*/
             return View();
         }
 

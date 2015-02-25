@@ -1,0 +1,98 @@
+﻿@model HASAWeb.Models.Article
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Article</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ColumnId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ColumnId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hits)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hits)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Keywords)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Keywords)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Author)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Author)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pictures)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pictures)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Content)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Content)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Authorized)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Authorized)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PublishTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PublishTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ReviseTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReviseTime)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ArticleId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
