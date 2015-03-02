@@ -12,17 +12,19 @@ namespace HASAWeb
 {
     public class MvcApplication : System.Web.HttpApplication
     {
-        public class ManagerInitializer : DropCreateDatabaseAlways<ManagerContext>
+        /*public class ManagerInitializer : DropCreateDatabaseAlways<ManagerContext>
         {
             protected override void Seed(ManagerContext context)
             {
                 context.Articles.Add(new Article { });
                 base.Seed(context);
             }
-        }
+        }*/
 
         protected void Application_Start()
         {
+            Database.SetInitializer(new DropCreateDatabaseAlways<ManagerContext>());
+
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);

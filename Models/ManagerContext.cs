@@ -22,5 +22,6 @@ namespace HASAWeb.Models
         public System.Data.Entity.DbSet<HASAWeb.Models.Article> Articles { get; set; }
         public System.Data.Entity.DbSet<HASAWeb.Models.Admin> Admins { get; set; }
         public System.Data.Entity.DbSet<HASAWeb.Models.Picture> Pictures { get; set; }
+        public System.Data.Entity.DbSet<HASAWeb.Models.Member> Members { get; set; }
     }
 }

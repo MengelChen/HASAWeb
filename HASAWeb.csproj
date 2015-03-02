@@ -124,8 +124,8 @@
     </Compile>
     <Compile Include="Models\Admin.cs" />
     <Compile Include="Models\Article.cs" />
-    <Compile Include="Models\Column.cs" />
     <Compile Include="Models\ManagerContext.cs" />
+    <Compile Include="Models\Member.cs" />
     <Compile Include="Models\Picture.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
