@@ -141,6 +141,7 @@
     <Content Include="Content\JoinUs_CH.png" />
     <Content Include="Content\JoinUs_CH_hover.png" />
     <Content Include="Content\LOGO.png" />
+    <Content Include="Content\Manager_Layout.css" />
     <Content Include="Content\News_CH.png" />
     <Content Include="Content\News_CH_hover.png" />
     <Content Include="Content\_Layout.css" />
@@ -177,12 +178,13 @@
     <Content Include="Views\Home\News.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
-    <Content Include="Views\Manage\Index.cshtml" />
     <Content Include="Views\Manager\Create.cshtml" />
     <Content Include="Views\Manager\Delete.cshtml" />
     <Content Include="Views\Manager\Details.cshtml" />
     <Content Include="Views\Manager\Edit.cshtml" />
     <Content Include="Views\Manager\Index.cshtml" />
+    <Content Include="Views\Manager\Manager_Layout.cshtml" />
+    <Content Include="Views\Manager\Articles.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

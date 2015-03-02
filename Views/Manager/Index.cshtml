@@ -1,75 +1,9 @@
-﻿@model IEnumerable<HASAWeb.Models.Article>
+﻿@{
+    Layout = "Manager_Layout.cshtml";
+}
+
+@model IEnumerable<HASAWeb.Models.Article>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "HASA Management: Home";
 }
-
-<h2>Index</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Hits)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Title)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Keywords)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Author)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Pictures)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Content)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PublishTime)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ReviseTime)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Hits)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Title)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Keywords)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Author)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Pictures)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Content)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PublishTime)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ReviseTime)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ArticleId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ArticleId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ArticleId })
-        </td>
-    </tr>
-}
-
-</table>

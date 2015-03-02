@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Data.Entity;
+using System.ComponentModel.DataAnnotations;
 
 namespace HASAWeb.Models
 {
     public class Article
     {
+        [Key]
         public virtual int      ArticleId     { get; set; }
+
         public virtual int      Hits          { get; set; }
         public virtual string   Title         { get; set; }
         public virtual string   Keywords      { get; set; }

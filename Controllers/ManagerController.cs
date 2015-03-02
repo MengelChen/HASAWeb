@@ -17,7 +17,14 @@ namespace HASAWeb.Controllers
         // GET: Manager
         public ActionResult Index()
         {
-            return View(db.Articles.ToList());
+            return View();
+        }
+
+        public ActionResult Articles()
+        {
+            List<Article> Articles = new List<Article>();
+            Articles = db.Articles.ToList();
+            return View(Articles);
         }
 
         // GET: Manager/Details/5

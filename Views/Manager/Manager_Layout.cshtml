@@ -1,0 +1,32 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <link type="text/css" rel="stylesheet" href="~/Content/Manager_Layout.css" />
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+</head>
+<body>
+    <div id="header">
+        Manager_Header
+    </div>
+    <div id="main">
+        <div id="columns">
+            @Html.ActionLink("文章管理", "Articles", "Manager")
+            <br />
+            @Html.ActionLink("图片管理", "Pictures", "Manager")
+            <br />            
+            @Html.ActionLink("管理员管理", "Admins", "Manager")
+        </div>
+        <div class="container">
+            @RenderBody()
+        </div>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

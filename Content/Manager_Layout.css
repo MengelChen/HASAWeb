@@ -1,0 +1,29 @@
+﻿body {
+}
+
+#header{
+    height: 130px;
+    align-content: center;
+    text-align: center;
+    background-color: chartreuse;
+}
+
+#main{
+    height: 500px;
+    text-align:left;
+}
+
+#columns{
+    width: 20%;
+    height:inherit;
+    background-color: azure;
+    text-align:right;
+    float:left;
+}
+
+.container{
+    width:80%;
+    height:inherit;
+    background-color:brown;
+    float:left;
+}
