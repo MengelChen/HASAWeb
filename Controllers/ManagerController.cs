@@ -28,7 +28,7 @@ namespace HASAWeb.Controllers
         }
 
         // GET: Manager/Details/5
-        public ActionResult Details(int? id)
+        public ActionResult ArticleDetails(int? id)
         {
             if (id == null)
             {
@@ -43,7 +43,7 @@ namespace HASAWeb.Controllers
         }
 
         // GET: Manager/Create
-        public ActionResult Create()
+        public ActionResult ArticleCreate()
         {
             return View();
         }
@@ -66,7 +66,7 @@ namespace HASAWeb.Controllers
         }
 
         // GET: Manager/Edit/5
-        public ActionResult Edit(int? id)
+        public ActionResult ArticleEdit(int? id)
         {
             if (id == null)
             {
@@ -85,7 +85,7 @@ namespace HASAWeb.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ArticleId,ColumnId,Hits,Title,Keywords,Author,Pictures,Content,Authorized,PublishTime,ReviseTime")] Article article)
+        public ActionResult ArticleEdit([Bind(Include = "ArticleId,ColumnId,Hits,Title,Keywords,Author,Pictures,Content,Authorized,PublishTime,ReviseTime")] Article article)
         {
             if (ModelState.IsValid)
             {
@@ -97,7 +97,7 @@ namespace HASAWeb.Controllers
         }
 
         // GET: Manager/Delete/5
-        public ActionResult Delete(int? id)
+        public ActionResult ArticleDelete(int? id)
         {
             if (id == null)
             {
@@ -114,7 +114,7 @@ namespace HASAWeb.Controllers
         // POST: Manager/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        public ActionResult ArticleDeleteConfirmed(int id)
         {
             Article article = db.Articles.Find(id);
             db.Articles.Remove(article);

@@ -178,10 +178,10 @@
     <Content Include="Views\Home\News.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
-    <Content Include="Views\Manager\Create.cshtml" />
-    <Content Include="Views\Manager\Delete.cshtml" />
-    <Content Include="Views\Manager\Details.cshtml" />
-    <Content Include="Views\Manager\Edit.cshtml" />
+    <Content Include="Views\Manager\ArticleCreate.cshtml" />
+    <Content Include="Views\Manager\ArticleDelete.cshtml" />
+    <Content Include="Views\Manager\ArticleDetails.cshtml" />
+    <Content Include="Views\Manager\ArticleEdit.cshtml" />
     <Content Include="Views\Manager\Index.cshtml" />
     <Content Include="Views\Manager\Manager_Layout.cshtml" />
     <Content Include="Views\Manager\Articles.cshtml" />

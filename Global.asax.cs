@@ -29,7 +29,7 @@ namespace HASAWeb
 
         protected void Application_Start()
         {
-            Database.SetInitializer(new ManagerInitializer());
+            Database.SetInitializer(new DropCreateDatabaseIfModelChanges<ManagerContext>());
 
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
