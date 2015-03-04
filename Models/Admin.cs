@@ -18,6 +18,16 @@ namespace HASAWeb.Models
         public virtual int Power { get; set; }
         public virtual DateTime RegisterTime { get; set; }
         public virtual DateTime LastLogin { get; set; }
+
+        public Admin()
+        {
+            Username = string.Empty;
+            Password = string.Empty;
+            Name = string.Empty;
+            Power = 0;
+            RegisterTime = DateTime.Now;
+            LastLogin = DateTime.Now;
+        }
     }
 
 }

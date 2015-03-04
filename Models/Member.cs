@@ -15,5 +15,13 @@ namespace HASAWeb.Models
         public virtual int PictureID { get; set; }
         public virtual string Position { get; set; }
         public virtual string Introduction { get; set; }
+
+        public Member()
+        {
+            Name = string.Empty;
+            PictureID = 0;
+            Position = string.Empty;
+            Introduction = string.Empty;
+        }
     }
 }

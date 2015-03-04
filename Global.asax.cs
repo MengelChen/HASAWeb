@@ -16,10 +16,10 @@ namespace HASAWeb
         {
             protected override void Seed(ManagerContext context)
             {
-                context.Articles.Add(new Article { Title = "A", Author = "a", Content = "Aa", Hits=0, PublishTime=DateTime.Now, ReviseTime=DateTime.Now, ExpiredTime=DateTime.Now});
-                context.Articles.Add(new Article { Title = "B", Author = "a", Content = "Bb", Hits = 0, PublishTime = DateTime.Now, ReviseTime = DateTime.Now, ExpiredTime = DateTime.Now });
-                context.Admins.Add(new Admin { Name = "HZD", Power = 2, Username = "HuZhengDai", LastLogin=DateTime.Now, RegisterTime=DateTime.Now});
-                context.Admins.Add(new Admin { Name = "XQW", Power = 1, Username = "XiongQinWen", LastLogin = DateTime.Now, RegisterTime = DateTime.Now });
+                context.Articles.Add(new Article { Title = "A", Author = "a", Content = "Aa", Abstraction = "a", Keywords = "a,a", Pictures = "1,2,3", Hits = 0, PublishTime = DateTime.Now, ReviseTime = DateTime.Now, ExpiredTime = DateTime.Now });
+                context.Articles.Add(new Article { Title = "B", Author = "a", Content = "Bb", Abstraction = "b", Keywords = "b,b", Pictures = "4,5,6", Hits = 0, PublishTime = DateTime.Now, ReviseTime = DateTime.Now, ExpiredTime = DateTime.Now });
+                context.Admins.Add(new Admin { Name = "HZD", Power = 2, Username = "HuZhengDai", Password = "abcde", LastLogin = DateTime.Now, RegisterTime = DateTime.Now });
+                context.Admins.Add(new Admin { Name = "XQW", Power = 1, Username = "XiongQinWen", Password = "fghij", LastLogin = DateTime.Now, RegisterTime = DateTime.Now });
                 context.Pictures.Add(new Picture { Name = "Logo", Route = "~/Content/LOGO.png", UploadTime=DateTime.Now});
                 context.Pictures.Add(new Picture { Name = "News", Route = "~/Content/News_CH.png", UploadTime=DateTime.Now});
                 context.SaveChanges();
@@ -29,7 +29,7 @@ namespace HASAWeb
 
         protected void Application_Start()
         {
-            Database.SetInitializer(new DropCreateDatabaseIfModelChanges<ManagerContext>());
+            Database.SetInitializer(new ManagerInitializer());
 
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);

@@ -45,7 +45,8 @@ namespace HASAWeb.Controllers
         // GET: Manager/Create
         public ActionResult ArticleCreate()
         {
-            return View();
+            Article article = new Article();
+            return View(article);
         }
 
         // POST: Manager/Create
@@ -53,13 +54,13 @@ namespace HASAWeb.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ArticleId,ColumnId,Hits,Title,Keywords,Author,Pictures,Content,Authorized,PublishTime,ReviseTime")] Article article)
+        public ActionResult ArticleCreate([Bind(Include = "ArticleId,Hits,Title,Keywords,Author,Pictures,Content, Abstraction,PublishTime,ReviseTime, ExpiredTime")] Article article)
         {
             if (ModelState.IsValid)
             {
                 db.Articles.Add(article);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Articles");
             }
 
             return View(article);
@@ -85,13 +86,13 @@ namespace HASAWeb.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult ArticleEdit([Bind(Include = "ArticleId,ColumnId,Hits,Title,Keywords,Author,Pictures,Content,Authorized,PublishTime,ReviseTime")] Article article)
+        public ActionResult ArticleEdit([Bind(Include = "ArticleId,Hits,Title,Keywords,Author,Pictures,Content, Abstraction,PublishTime,ReviseTime, ExpiredTime")] Article article)
         {
             if (ModelState.IsValid)
             {
                 db.Entry(article).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Articles");
             }
             return View(article);
         }
@@ -119,7 +120,7 @@ namespace HASAWeb.Controllers
             Article article = db.Articles.Find(id);
             db.Articles.Remove(article);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Articles");
         }
 
         protected override void Dispose(bool disposing)

@@ -15,6 +15,13 @@ namespace HASAWeb.Models
         public virtual string Name { get; set; }
         public virtual string Route { get; set; }
         public virtual DateTime UploadTime { get; set; }
+
+        public Picture()
+        {
+            Name = string.Empty;
+            Route = string.Empty;
+            UploadTime = DateTime.Now;
+        }
     }
 
 }
