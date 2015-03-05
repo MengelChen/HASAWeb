@@ -27,4 +27,17 @@ E:\Visual Studio 2013\Projects\HASAWeb\HASAWeb\bin\EntityFramework.dll
 E:\Visual Studio 2013\Projects\HASAWeb\HASAWeb\bin\EntityFramework.SqlServer.dll
 E:\Visual Studio 2013\Projects\HASAWeb\HASAWeb\bin\EntityFramework.xml
 E:\Visual Studio 2013\Projects\HASAWeb\HASAWeb\bin\EntityFramework.SqlServer.xml
+E:\Visual Studio 2013\Projects\HASAWeb\HASAWeb\bin\Microsoft.AspNet.Identity.Core.dll
+E:\Visual Studio 2013\Projects\HASAWeb\HASAWeb\bin\Microsoft.AspNet.Identity.Owin.dll
+E:\Visual Studio 2013\Projects\HASAWeb\HASAWeb\bin\Microsoft.Owin.dll
+E:\Visual Studio 2013\Projects\HASAWeb\HASAWeb\bin\Microsoft.Owin.Security.Cookies.dll
+E:\Visual Studio 2013\Projects\HASAWeb\HASAWeb\bin\Microsoft.Owin.Security.dll
+E:\Visual Studio 2013\Projects\HASAWeb\HASAWeb\bin\Microsoft.Owin.Security.OAuth.dll
+E:\Visual Studio 2013\Projects\HASAWeb\HASAWeb\bin\Owin.dll
+E:\Visual Studio 2013\Projects\HASAWeb\HASAWeb\bin\Microsoft.AspNet.Identity.Core.xml
+E:\Visual Studio 2013\Projects\HASAWeb\HASAWeb\bin\Microsoft.AspNet.Identity.Owin.xml
+E:\Visual Studio 2013\Projects\HASAWeb\HASAWeb\bin\Microsoft.Owin.xml
+E:\Visual Studio 2013\Projects\HASAWeb\HASAWeb\bin\Microsoft.Owin.Security.xml
+E:\Visual Studio 2013\Projects\HASAWeb\HASAWeb\bin\Microsoft.Owin.Security.Cookies.xml
+E:\Visual Studio 2013\Projects\HASAWeb\HASAWeb\bin\Microsoft.Owin.Security.OAuth.xml
 E:\Visual Studio 2013\Projects\HASAWeb\HASAWeb\obj\Debug\HASAWeb.csprojResolveAssemblyReference.cache

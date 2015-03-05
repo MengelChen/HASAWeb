@@ -1,0 +1,64 @@
+﻿@model List<HASAWeb.Models.Admin>
+
+@{
+    ViewBag.Title = "Admins";
+    Layout = "~/Views/Manager/Manager_Layout.cshtml";
+}
+
+<h2>Administors</h2>
+
+<p>
+    @Html.ActionLink("Create New", "AdminCreate")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Username
+        </th>
+        <th>
+            Password
+        </th>
+        <th>
+            Name
+        </th>
+        <th>
+            Power
+        </th>
+        <th>
+            Register Time
+        </th>
+        <th>
+            Last Login
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Username)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Password)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Power)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RegisterTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastLogin)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "AdminEdit", new { id=item.AdminId }) |
+            @Html.ActionLink("Details", "AdminDetails", new { id=item.AdminId }) |
+            @Html.ActionLink("Delete", "AdminDelete", new { id=item.AdminId })
+        </td>
+    </tr>
+}
+
+</table>
