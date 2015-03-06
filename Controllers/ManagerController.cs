@@ -11,10 +11,12 @@ using HASAWeb.Tools;
 
 namespace HASAWeb.Controllers
 {
+    [Tools.Authorization.AdminAuthorize]
     public class ManagerController : Controller
     {
         private ManagerContext db = new ManagerContext();
 
+        [AllowAnonymous]
         public ActionResult Login()
         {
             return View();
@@ -22,6 +24,7 @@ namespace HASAWeb.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [AllowAnonymous]
         public ActionResult Login(Models.LoginView login)
         {
             if (ModelState.IsValid)
@@ -51,7 +54,6 @@ namespace HASAWeb.Controllers
         }
 
         // GET: Manager
-        [Tools.Authorization.AdminAuthorize]
         public ActionResult Index()
         {
             return View();
@@ -240,6 +242,99 @@ namespace HASAWeb.Controllers
             db.Admins.Remove(admin);
             db.SaveChanges();
             return RedirectToAction("Admins");
+        }
+
+        public ActionResult Pictures()
+        {
+            List<Picture> Pictures = new List<Picture>();
+            Pictures = db.Pictures.ToList();
+            return View(Pictures);
+        }
+
+        public ActionResult PictureDetails(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Picture picture = db.Pictures.Find(id);
+            if (picture == null)
+            {
+                return HttpNotFound();
+            }
+            return View(picture);
+        }
+
+        public ActionResult PictureCreate()
+        {
+            Picture picture = new Picture();
+            return View(picture);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult PictureCreate([Bind(Include = "Name, Route, UploadTime")] Picture picture)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Pictures.Add(picture);
+                db.SaveChanges();
+                return RedirectToAction("Pictures");
+            }
+
+            return View(picture);
+        }
+
+        public ActionResult PictureEdit(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Picture picture = db.Pictures.Find(id);
+            if (picture == null)
+            {
+                return HttpNotFound();
+            }
+            return View(picture);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult ArticleEdit([Bind(Include = "Name, Route, UploadTime")] Picture picture)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Pictures.Add(picture);
+                db.SaveChanges();
+                return RedirectToAction("Pictures");
+            }
+
+            return View(picture);
+        }
+
+        public ActionResult PictureDelete(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Picture picture = db.Pictures.Find(id);
+            if (picture == null)
+            {
+                return HttpNotFound();
+            }
+            return View(picture);
+        }
+
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult PictureDeleteConfirmed(int id)
+        {
+            Picture picture = db.Pictures.Find(id);
+            db.Pictures.Remove(picture);
+            db.SaveChanges();
+            return RedirectToAction("Pictures");
         }
 
         protected override void Dispose(bool disposing)

@@ -215,6 +215,11 @@
     <Content Include="Views\Manager\AdminEdit.cshtml" />
     <Content Include="Views\Manager\AdminDelete.cshtml" />
     <Content Include="Views\Manager\Login.cshtml" />
+    <Content Include="Views\Manager\Pictures.cshtml" />
+    <Content Include="Views\Manager\PictureDetails.cshtml" />
+    <Content Include="Views\Manager\PictureCreate.cshtml" />
+    <Content Include="Views\Manager\PictureEdit.cshtml" />
+    <Content Include="Views\Manager\PictureDelete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

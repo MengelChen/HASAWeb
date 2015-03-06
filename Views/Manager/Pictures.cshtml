@@ -1,0 +1,46 @@
+﻿@model List<HASAWeb.Models.Picture>
+
+@{
+    ViewBag.Title = "Pictures";
+    Layout = "~/Views/Manager/Manager_Layout.cshtml";
+}
+
+<h2>Pictures</h2>
+
+<p>
+    @Html.ActionLink("Create New", "PictureCreate")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Name
+        </th>
+        <th>
+            Route
+        </th>
+        <th>
+            Upload Time
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Route)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UploadTime)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "PictureEdit", new { id=item.PictureId }) |
+            @Html.ActionLink("Details", "PictureDetails", new { id=item.PictureId }) |
+            @Html.ActionLink("Delete", "PictureDelete", new { id=item.PictureId })
+        </td>
+    </tr>
+}
+
+</table>

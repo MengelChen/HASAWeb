@@ -1,0 +1,43 @@
+﻿@model HASAWeb.Models.Picture
+
+@{
+    ViewBag.Title = "PictureDetails";
+    Layout = "~/Views/Manager/Manager_Layout.cshtml";
+}
+
+<h2>PictureDetails</h2>
+
+<div>
+    <h4>Picture</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Route)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Route)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UploadTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UploadTime)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "PictureEdit", new { id = Model.PictureId }) |
+    @Html.ActionLink("Back to List", "Pictures")
+</p>
