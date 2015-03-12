@@ -40,4 +40,3 @@ E:\Visual Studio 2013\Projects\HASAWeb\HASAWeb\bin\Microsoft.Owin.xml
 E:\Visual Studio 2013\Projects\HASAWeb\HASAWeb\bin\Microsoft.Owin.Security.xml
 E:\Visual Studio 2013\Projects\HASAWeb\HASAWeb\bin\Microsoft.Owin.Security.Cookies.xml
 E:\Visual Studio 2013\Projects\HASAWeb\HASAWeb\bin\Microsoft.Owin.Security.OAuth.xml
-E:\Visual Studio 2013\Projects\HASAWeb\HASAWeb\obj\Debug\HASAWeb.csprojResolveAssemblyReference.cache

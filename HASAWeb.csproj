@@ -145,6 +145,8 @@
     </Compile>
     <Compile Include="Models\Admin.cs" />
     <Compile Include="Models\Article.cs" />
+    <Compile Include="Models\Column.cs" />
+    <Compile Include="Models\ColumnView.cs" />
     <Compile Include="Models\LoginView.cs" />
     <Compile Include="Models\ManagerContext.cs" />
     <Compile Include="Models\Member.cs" />
@@ -154,20 +156,11 @@
     <Compile Include="Tools\Security.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\About_CH.png" />
-    <Content Include="Content\About_CH_hover.png" />
-    <Content Include="Content\Archive_CH.png" />
-    <Content Include="Content\Archive_CH_hover.png" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\Experience_CH.png" />
-    <Content Include="Content\Experience_CH_hover.png" />
-    <Content Include="Content\JoinUs_CH.png" />
-    <Content Include="Content\JoinUs_CH_hover.png" />
-    <Content Include="Content\LOGO.png" />
+    <Content Include="Content\HomeIndex.css" />
     <Content Include="Content\Manager_Layout.css" />
-    <Content Include="Content\News_CH.png" />
-    <Content Include="Content\News_CH_hover.png" />
+    <Content Include="Content\TopBar-Layout-b-BG.png" />
     <Content Include="Content\_Layout.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -200,13 +193,11 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\News.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Manager\ArticleCreate.cshtml" />
     <Content Include="Views\Manager\ArticleDelete.cshtml" />
     <Content Include="Views\Manager\ArticleDetails.cshtml" />
     <Content Include="Views\Manager\ArticleEdit.cshtml" />
-    <Content Include="Views\Manager\Index.cshtml" />
     <Content Include="Views\Manager\Manager_Layout.cshtml" />
     <Content Include="Views\Manager\Articles.cshtml" />
     <Content Include="Views\Manager\Admins.cshtml" />
@@ -220,6 +211,11 @@
     <Content Include="Views\Manager\PictureCreate.cshtml" />
     <Content Include="Views\Manager\PictureEdit.cshtml" />
     <Content Include="Views\Manager\PictureDelete.cshtml" />
+    <Content Include="Views\Manager\Index.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\JoinUs.cshtml" />
+    <Content Include="Views\Home\Archieve.cshtml" />
+    <Content Include="Views\Home\Experiences.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
