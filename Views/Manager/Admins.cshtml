@@ -5,60 +5,55 @@
     Layout = "~/Views/Manager/Manager_Layout.cshtml";
 }
 
-<h2>Administors</h2>
+<h2>管理员</h2>
 
 <p>
-    @Html.ActionLink("Create New", "AdminCreate")
+    @Html.ActionLink("新建", "AdminCreate")
 </p>
-<table class="table">
+<div id="blank" style="width:100%; height:50px;"></div>
+<table class="table" border="0">
     <tr>
         <th>
-            Username
+            用户名
         </th>
         <th>
-            Password
+            姓名
         </th>
         <th>
-            Name
+            权限
         </th>
         <th>
-            Power
+            注册时间
         </th>
         <th>
-            Register Time
-        </th>
-        <th>
-            Last Login
+            上次登录时间
         </th>
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Username)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Password)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Power)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.RegisterTime)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.LastLogin)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "AdminEdit", new { id=item.AdminId }) |
-            @Html.ActionLink("Details", "AdminDetails", new { id=item.AdminId }) |
-            @Html.ActionLink("Delete", "AdminDelete", new { id=item.AdminId })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Username)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Power)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RegisterTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastLogin)
+            </td>
+            <td>
+                @Html.ActionLink("Details", "AdminDetails", new { id = item.AdminId }) |
+                @Html.ActionLink("Delete", "AdminDelete", new { id = item.AdminId })
+            </td>
+        </tr>
+    }
 
 </table>

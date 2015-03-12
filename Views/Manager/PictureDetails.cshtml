@@ -5,31 +5,30 @@
     Layout = "~/Views/Manager/Manager_Layout.cshtml";
 }
 
-<h2>PictureDetails</h2>
+<h2>图片详情</h2>
 
 <div>
-    <h4>Picture</h4>
     <hr />
     <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
+        <dd>
+            图片名
+        </dd>
 
         <dd>
             @Html.DisplayFor(model => model.Name)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Route)
-        </dt>
+        <dd>
+            路径
+        </dd>
 
         <dd>
             @Html.DisplayFor(model => model.Route)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.UploadTime)
-        </dt>
+        <dd>
+            上传时间
+        </dd>
 
         <dd>
             @Html.DisplayFor(model => model.UploadTime)

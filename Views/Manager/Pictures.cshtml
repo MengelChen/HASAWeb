@@ -5,21 +5,22 @@
     Layout = "~/Views/Manager/Manager_Layout.cshtml";
 }
 
-<h2>Pictures</h2>
+<h2>图片</h2>
 
 <p>
-    @Html.ActionLink("Create New", "PictureCreate")
+    @Html.ActionLink("新建", "PictureCreate")
 </p>
-<table class="table">
+<div id="blank" style="width:100%; height:50px;"></div>
+<table class="table" border="0">
     <tr>
         <th>
-            Name
+            名字
         </th>
         <th>
-            Route
+            链接
         </th>
         <th>
-            Upload Time
+            上传时间
         </th>
         <th></th>
     </tr>

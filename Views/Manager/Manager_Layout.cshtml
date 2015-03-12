@@ -10,18 +10,24 @@
 </head>
 <body>
     <div id="header">
-        Manager_Header
+        <div id="TopBar"></div>
     </div>
+    <div id="MidleBar" style="height:66px; width:inherit; background-color:#79b4ff; opacity:0.6;"></div>
     <div id="main">
-        <div id="columns">
-            @Html.ActionLink("Articles", "Articles", "Manager")
-            <br />
-            @Html.ActionLink("Pictures", "Pictures", "Manager")
-            <br />            
-            @Html.ActionLink("Administors", "Admins", "Manager")
+        <div id="left">
+            <div id="columns">
+                <br /><br /><br /><br /><br />
+                @Html.ActionLink("文章管理", "Articles", "Manager")
+                <br /><br /><br /><br /><br />
+                @Html.ActionLink("图片管理", "Pictures", "Manager")
+                <br /><br /><br /><br /><br />
+                @Html.ActionLink("管理员管理", "Admins", "Manager")
+            </div>
         </div>
-        <div class="container">
-            @RenderBody()
+        <div id="right">
+            <div class="container">
+                @RenderBody()
+            </div>
         </div>
     </div>
 

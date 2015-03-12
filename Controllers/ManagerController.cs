@@ -88,10 +88,14 @@ namespace HASAWeb.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult ArticleCreate([Bind(Include = "ArticleId,Hits,Title,Keywords,Author,Pictures,Content, Abstraction,PublishTime,ReviseTime, ExpiredTime")] Article article)
+        public ActionResult ArticleCreate([Bind(Include = "ArticleId,Title,Keywords,Author,Pictures,Content, Abstraction, ExpiredTime")] Article article)
         {
             if (ModelState.IsValid)
             {
+                article.Hits = 0;
+                article.PublishTime = DateTime.Now;
+                article.ReviseTime = DateTime.Now;
+                if (article.ExpiredTime == null) article.ExpiredTime = DateTime.Now.AddDays(7);
                 db.Articles.Add(article);
                 db.SaveChanges();
                 return RedirectToAction("Articles");
@@ -116,10 +120,11 @@ namespace HASAWeb.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult ArticleEdit([Bind(Include = "ArticleId,Hits,Title,Keywords,Author,Pictures,Content, Abstraction,PublishTime,ReviseTime, ExpiredTime")] Article article)
+        public ActionResult ArticleEdit([Bind(Include = "ArticleId, Hits, Title,Keywords,Author,Pictures,Content, PublishTime, Abstraction, ExpiredTime")] Article article)
         {
             if (ModelState.IsValid)
             {
+                article.ReviseTime = DateTime.Now;
                 db.Entry(article).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Articles");
@@ -141,7 +146,7 @@ namespace HASAWeb.Controllers
             return View(article);
         }
 
-        [HttpPost, ActionName("Delete")]
+        [HttpPost, ActionName("ArticleDelete")]
         [ValidateAntiForgeryToken]
         public ActionResult ArticleDeleteConfirmed(int id)
         {
@@ -180,11 +185,12 @@ namespace HASAWeb.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult AdminCreate([Bind(Include = "AdminID, Username, Password, Name, Power, RegisterTime, LastLogin")] Admin admin)
+        public ActionResult AdminCreate([Bind(Include = "AdminID, Username, Password, Name, Power")] Admin admin)
         {
             if (ModelState.IsValid)
             {
                 admin.Password = Security.Encrypt(admin.Password);
+                admin.RegisterTime = admin.LastLogin = DateTime.Now;
                 db.Admins.Add(admin);
                 db.SaveChanges();
                 return RedirectToAction("Admins");
@@ -234,7 +240,7 @@ namespace HASAWeb.Controllers
             return View(admin);
         }
 
-        [HttpPost, ActionName("Delete")]
+        [HttpPost, ActionName("AdminDelete")]
         [ValidateAntiForgeryToken]
         public ActionResult AdminDeleteConfirmed(int id)
         {
@@ -273,10 +279,11 @@ namespace HASAWeb.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult PictureCreate([Bind(Include = "Name, Route, UploadTime")] Picture picture)
+        public ActionResult PictureCreate([Bind(Include = "Name, Route")] Picture picture)
         {
             if (ModelState.IsValid)
             {
+                picture.UploadTime = DateTime.Now;
                 db.Pictures.Add(picture);
                 db.SaveChanges();
                 return RedirectToAction("Pictures");
@@ -301,11 +308,11 @@ namespace HASAWeb.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult ArticleEdit([Bind(Include = "Name, Route, UploadTime")] Picture picture)
+        public ActionResult PictureEdit([Bind(Include = "Name, Route, UploadTime")] Picture picture)
         {
             if (ModelState.IsValid)
             {
-                db.Pictures.Add(picture);
+                db.Entry(picture).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Pictures");
             }
@@ -327,7 +334,7 @@ namespace HASAWeb.Controllers
             return View(picture);
         }
 
-        [HttpPost, ActionName("Delete")]
+        [HttpPost, ActionName("PictureDelete")]
         [ValidateAntiForgeryToken]
         public ActionResult PictureDeleteConfirmed(int id)
         {
