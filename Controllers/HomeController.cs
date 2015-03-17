@@ -13,17 +13,7 @@ namespace HASAWeb.Controllers
 
         public ActionResult Index()
         {
-            List<Picture> pictures = new List<Picture>();
-            List<Picture> backgrounds = new List<Picture>();
-            pictures = db.Pictures.ToList<Picture>();
-            foreach(var pic in pictures)
-            {
-                if(pic.Name.IndexOf("HomePage")!=-1)
-                {
-                    backgrounds.Add(pic);
-                }
-            }
-            return View(backgrounds);
+            return View();
         }
 
         public ActionResult About()

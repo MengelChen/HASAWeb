@@ -156,9 +156,16 @@
     <Compile Include="Tools\Security.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\1.png" />
+    <Content Include="Content\2.png" />
+    <Content Include="Content\3.png" />
+    <Content Include="Content\4.png" />
+    <Content Include="Content\5.png" />
+    <Content Include="Content\About.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\HomeIndex.css" />
+    <Content Include="Content\logo_small.png" />
     <Content Include="Content\Manager_Header.png" />
     <Content Include="Content\Manager_Layout.css" />
     <Content Include="Content\TopBar-Layout-b-BG.png" />

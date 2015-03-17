@@ -1,6 +1,4 @@
-﻿@model List<HASAWeb.Models.Picture>
-
-@{
+﻿@{
     Layout = null;
 }
 
@@ -11,25 +9,32 @@
     <meta name="viewport" content="width=device-width" />
     <title>Home</title>
     <link href=" ~/Content/HomeIndex.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.10.2.js" type="text/javascript">
+    </script>
     <script type="text/javascript">
-    var w = window.innerWidth
-    || document.documentElement.clientWidth
-    || document.body.clientWidth;
-
-    var h = window.innerHeight
-    || document.documentElement.clientHeight
-    || document.body.clientHeight;
-    function initial() {
-        body = document.getElementById("body");
-        body.style.width = w;
-        body.style.backgroundImage = URL('@(Model[0].Route)');
-    }
+        $(document).ready(function () {
+            var img = new Array(5);
+            for (var i = 0; i < 5; i++) {
+                img[i] = new Image();
+                img[i].src = "/Content/" + (i + 1).toString() + ".png";
+            }
+            $("#bt1").hover(function () { $("body").attr("style", "background-image:url('/Content/1.png');"); })
+            $("#bt2").hover(function () { $("body").attr("style", "background-image:url('/Content/2.png');"); })
+            $("#bt3").hover(function () { $("body").attr("style", "background-image:url('/Content/3.png');"); })
+            $("#bt4").hover(function () { $("body").attr("style", "background-image:url('/Content/4.png');"); })
+            $("#bt5").hover(function () { $("body").attr("style", "background-image:url('/Content/5.png');"); })
+        });
     </script>
 </head>
-<body id="body" onload="initial()">
-    <div style="height: 5%; width: 100%"> 
-    </div>
+<body>
     <div id="TopBar">
+        <div id="leftBlank" style="margin:0px; height:inherit; width:10%;"></div>
+        <a id="logo" href='/Home/Index'></a>
+        @Html.ActionLink("关于HASA", "About", new { }, new { @class = "botton", id = "bt1" })
+        @Html.ActionLink("活动新闻", "News", new { }, new { @class = "botton", id = "bt2" })
+        @Html.ActionLink("活动历程", "Archieve", new { }, new { @class = "botton", id = "bt3" })
+        @Html.ActionLink("留学经验", "Experiences", new { }, new { @class = "botton", id = "bt4" })
+        @Html.ActionLink("加入HASA", "JoinUs", new { }, new { @class = "botton", id = "bt5" })
     </div>
 </body>
 </html>

@@ -1,45 +1,35 @@
 ﻿<!DOCTYPE html>
-<html>
+<html style="height:100%; background-color:#f5f8fa;">
 <head>
-    <meta charset="utf-8" />
+    <meta charset=" utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title</title>
     <link rel="stylesheet" type="text/css" href="~/Content/_Layout.css"/>
     <script src="~/Scripts/jquery-1.10.2.js"></script>
     <script type="text/javascript">
-        function img_change(imgId, route) {
-            //alert($('img #1').attr('src'));
-            $('#'+imgId).attr('src', function () { return route });
-            //alert($('img #1').attr('src'));
+        function RedirectTo(target)
+        {
+            return window.location.href("~/"+target);
         }
     </script>
 </head>
 <body>
-    <div id="logo">
-        <img src="~/Content/LOGO.png"/>
-    </div>
-    <div id="columns">
-        <div class="column">
-            <img id="1" src="~/Content/About_CH.png" onmouseover="img_change('1', '/Content/About_CH_hover.png')" onmouseout="img_change('1', '/Content/About_CH.png')"/>
-        </div>
-        <div class="column">
-            <img id="2" src="~/Content/News_CH.png" onmouseover="img_change('2','/Content/News_CH_hover.png')" onmouseout="img_change('2', '/Content/News_CH.png')" />
-        </div>
-        <div class="column">
-            <img id="3" src="~/Content/Archive_CH.png" style="width:22%" onmouseover="img_change('3', '/Content/Archive_CH_hover.png')" onmouseout="    img_change('3', '/Content/Archive_CH.png')" />
-        </div>
-        <div class="column">
-            <img id="4" src="~/Content/Experience_CH.png" onmouseover="img_change('4', '/Content/Experience_CH_hover.png')" onmouseout="    img_change('4', '/Content/Experience_CH.png')" />
-        </div>
-        <div class="column">
-            <img id="5" src="~/Content/JoinUs_CH.png" onmouseover="img_change('5', '/Content/JoinUs_CH_hover.png')" onmouseout="    img_change('5', '/Content/JoinUs_CH.png')" />
+    <div id="top">
+        <div id="TopBar">
+            <div id="leftBlank" style="margin:0px; height:inherit; width:10%;"></div>
+            <a id="logo" href='/Home/Index'></a>
+            @Html.ActionLink("关于HASA", "About", new { }, new { @class = "botton", id = "bt1" })
+            @Html.ActionLink("活动新闻", "News", new { }, new { @class = "botton", id = "bt2" })
+            @Html.ActionLink("活动历程", "Archieve", new { }, new { @class = "botton", id = "bt3" })
+            @Html.ActionLink("留学经验", "Experiences", new { }, new { @class = "botton", id = "bt4" })
+            @Html.ActionLink("加入HASA", "JoinUs", new { }, new { @class = "botton", id = "bt5" })
         </div>
     </div>
     <div class="container body-content">
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - @ViewData["DB"]</p>
+            <p id="copyRight">&copy;湖南留学生联盟 @DateTime.Now.Year - @ViewData["DB"]  湘ICP备1400358号</p>
         </footer>
     </div>
 

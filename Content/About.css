@@ -1,0 +1,55 @@
+﻿
+
+.container body-content{
+    text-align:center;
+}
+
+#board{
+    margin:5% auto;
+    min-height:500px;
+    height:auto;
+    width:600px;
+    background-color:white;
+    box-shadow:2px 2px 20px #888;
+    text-align:center;
+    padding: 10px;
+}
+
+#choice{
+    background-color:#8a8b8b;
+    margin: auto;
+    margin-top: 3%;
+    height:20px;
+    width:400px;
+    text-align:center;
+    padding:13px;
+    border-radius: 5px 5px;
+}
+
+.select{
+    height:15px;
+    text-align:center;
+    margin:auto;
+    text-decoration-color:#696969;
+    font-size:20px;
+    font-family: 宋体;
+}
+
+.select:hover{
+    font-weight:bold;
+    text-decoration-color:black;
+}
+
+#s1{
+    float:left;
+    margin-left:50px;
+}
+
+#s2{
+    float:right;
+    margin-right:50px;
+}
+
+.select:hover{
+    text-decoration-color:black;
+}
