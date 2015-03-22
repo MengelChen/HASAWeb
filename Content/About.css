@@ -1,4 +1,7 @@
 ﻿
+#top {
+    background-image:url("4.png");
+}
 
 .container body-content{
     text-align:center;
@@ -8,9 +11,10 @@
     margin:5% auto;
     min-height:500px;
     height:auto;
-    width:600px;
+    width:900px;
     background-color:white;
     box-shadow:2px 2px 20px #888;
+    border-radius: 5px 5px;
     text-align:center;
     padding: 10px;
 }
@@ -52,4 +56,24 @@
 
 .select:hover{
     text-decoration-color:black;
+}
+
+#logo-mid{
+    background-image:url("logo_mid.jpg");
+    width:550px;
+    height:300px;
+    margin:auto;
+}
+
+#content{
+    margin-left: 210px;
+    margin-right: 210px;
+    text-align:left;
+    font-family: 黑体;
+    color:#696969;
+    font-size: 20px;
+    margin-top: 3%;
+    margin-bottom:5%;
+    line-height: 35px;
+    letter-spacing: 5px;
 }

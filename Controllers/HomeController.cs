@@ -23,11 +23,26 @@ namespace HASAWeb.Controllers
             return View();
         }
 
-        public ActionResult News()
+        public ActionResult News(int? id)
         {
             ViewBag.Message = "HASA News.";
 
-            return View();
+            const int NumberOfOnePage = 4;
+            int n;
+            if (id == null) n = 0;
+            else n = (int)id;
+            List<Article> articles = db.Articles.ToList<Article>();
+            List<Article> art = new List<Article>();
+            if (articles.Count <= NumberOfOnePage) art = articles;
+            else
+            {
+                for (int i = n * NumberOfOnePage; i < (n + 1) * NumberOfOnePage; i++)
+                {
+                    art.Add(articles[i]);
+                }
+            }
+
+            return View(art);
         }
 
         public ActionResult Archieve()

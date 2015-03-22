@@ -1,0 +1,9 @@
+﻿#top {
+    background-image:url("8.png");
+    background-position-y:-5px;
+    background-repeat:no-repeat;
+}
+
+#TopBar{
+    box-shadow:none;
+}

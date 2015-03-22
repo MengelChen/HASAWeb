@@ -1,8 +1,43 @@
-﻿@{
+﻿@model List<HASAWeb.Models.Article>
+
+@{
     ViewBag.Title = "活动新闻";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2 style="text-align:center;">这里是活动新闻</h2>
-<br />
-<h3 style="text-align:center;">具体内容待填充</h3>
+<link href="~/Content/News.css" rel="stylesheet" />
+
+<div id="board">
+    @foreach (var m in Model)
+    {
+        <div class="title">@m.Title</div>
+        <br />
+        <div class="time">@m.PublishTime</div>
+        <br />
+        <div class="content">@m.Content</div>
+        <br />
+        <a class="more">&lt阅读全文&gt</a>
+        if (m.ArticleId != Model[Model.Count-1].ArticleId)
+        {
+            <hr style="margin: 0px;"/>
+        }
+    }
+    <div id="navi">
+        @{
+            string url = HttpContext.Current.Request.Url.AbsolutePath;
+            List<string> us=url.Split('/').ToList<string>();
+            string query=string.Empty;
+            for(int i=0; i<us.Count; i++)
+            {
+                if(us[i]=="News")
+                {
+                    if (i == us.Count - 1){query = "0";}
+                    else {query = us[i + 1];}
+                    break;
+                }
+            }
+        }
+        @Html.ActionLink("上一页", "News", new { id=int.Parse(query)-1})
+        @Html.ActionLink("下一页", "News", new { id=int.Parse(query)+1})
+    </div>
+</div>
