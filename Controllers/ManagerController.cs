@@ -88,7 +88,7 @@ namespace HASAWeb.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult ArticleCreate([Bind(Include = "ArticleId,Title,Keywords,Author,Pictures,Content, Abstraction, ExpiredTime")] Article article)
+        public ActionResult ArticleCreate([Bind(Include = "ArticleId,Title,Column,Keywords,Link, Author,Pictures,Content, Abstraction, ExpiredTime")] Article article)
         {
             if (ModelState.IsValid)
             {
@@ -120,7 +120,7 @@ namespace HASAWeb.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult ArticleEdit([Bind(Include = "ArticleId, Hits, Title,Keywords,Author,Pictures,Content, PublishTime, Abstraction, ExpiredTime")] Article article)
+        public ActionResult ArticleEdit([Bind(Include = "ArticleId, Title, Column, Keywords, Link, Author, Pictures, Content, Abstraction, ExpiredTime")] Article article)
         {
             if (ModelState.IsValid)
             {

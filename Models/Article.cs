@@ -13,11 +13,13 @@ namespace HASAWeb.Models
         public virtual int          ArticleId     { get; set; }
 
         public virtual int          Hits          { get; set; }
+        public virtual string       Column        { get; set; }
+        public virtual string       Link          { get; set; }
         public virtual string       Title         { get; set; }
-        public virtual string       Keywords      { get; set; }
         public virtual string       Author        { get; set; }
         public virtual string       Pictures      { get; set; }//Pictures存储格式："12,13,15,17"分别对应SPictures[0]到SPictures[3]
         public virtual string       Content       { get; set; }
+        public virtual string       Keywords      { get; set; }
         public virtual string       Abstraction   { get; set; } 
         public virtual DateTime     PublishTime   { get; set; }
         public virtual DateTime     ReviseTime    { get; set; }
@@ -27,7 +29,8 @@ namespace HASAWeb.Models
         {
             Hits = 0;
             Title = string.Empty;
-            Keywords = string.Empty;
+            Column = "活动新闻";
+            Link = string.Empty;
             Author = string.Empty;
             Pictures = string.Empty;
             Content = string.Empty;

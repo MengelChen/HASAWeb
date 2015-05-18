@@ -39,6 +39,22 @@
         </dd>
 
         <dd>
+            栏目
+        </dd>
+
+        <dd>
+            @Html.DisplayFor(model => model.Column)
+        </dd>
+
+        <dd>
+            链接
+        </dd>
+
+        <dd>
+            @Html.DisplayFor(model => model.Link)
+        </dd>
+
+        <dd>
             作者
         </dd>
 
@@ -97,6 +113,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ArticleId }) |
+    @Html.ActionLink("Edit", "ArticleEdit", new { id = Model.ArticleId }) |
     @Html.ActionLink("Back to List", "Articles")
 </p>

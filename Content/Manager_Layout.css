@@ -47,7 +47,8 @@
 
 .container{
     width:65%;
-    height:500px;
+    height:auto;
+    min-height: 500px;
     border-radius:20px;
     box-shadow:5px 5px 5px #888888;
     background-color:white;
