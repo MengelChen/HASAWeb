@@ -1,16 +1,35 @@
-﻿@model List<HASAWeb.Models.ColumnView>
+﻿@model List<HASAWeb.Models.Article>
 
 @{
-    ViewBag.Title = "活动历程";
+    ViewBag.Title = "历史活动";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <link href="~/Content/Archieve.css" rel="stylesheet" />
 
-<div id="left">
-    <div id="columns">
+<div id="board">
+    <div id="top_title" style="margin:3%; margin-left:10%;">历史活动</div>
+    @foreach(var m in Model){
+        <hr />
+        <a class="line_title" href="@m.Link">@m.Title</a>
+        <div class="line_time" style="margin-right:30%; float:right;">@m.PublishTime</div>
+    }
+    <div id="navi">
+        @{
+            string url = HttpContext.Current.Request.Url.AbsolutePath;
+            List<string> us = url.Split('/').ToList<string>();
+            string query = string.Empty;
+            for (int i = 0; i < us.Count; i++)
+            {
+                if (us[i] == "Archieve")
+                {
+                    if (i == us.Count - 1) { query = "0"; }
+                    else { query = us[i + 1]; }
+                    break;
+                }
+            }
+        }
+        @Html.ActionLink("上一页", "Archieve", new { id = int.Parse(query) - 1 })
+        @Html.ActionLink("下一页", "Archieve", new { id = int.Parse(query) + 1 })
     </div>
-</div>
-<div id="right">
-    <div id="board"></div>
 </div>

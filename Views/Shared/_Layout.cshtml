@@ -19,17 +19,18 @@
             <div id="leftBlank" style="margin:0px; height:inherit; width:10%;"></div>
             <a id="logo" href='/Home/Index'></a>
             @Html.ActionLink("关于HASA", "About", new { }, new { @class = "botton", id = "bt1" })
-            @Html.ActionLink("活动新闻", "News", new { }, new { @class = "botton", id = "bt2" })
-            @Html.ActionLink("活动历程", "Archieve", new { }, new { @class = "botton", id = "bt3" })
-            @Html.ActionLink("留学经验", "Experiences", new { }, new { @class = "botton", id = "bt4" })
+            @Html.ActionLink("活动预告", "News", new { }, new { @class = "botton", id = "bt2" })
+            @Html.ActionLink("历史活动", "Archieve", new { }, new { @class = "botton", id = "bt3" })
+            @Html.ActionLink("干货仓库", "Experiences", new { }, new { @class = "botton", id = "bt4" })
             @Html.ActionLink("加入HASA", "JoinUs", new { }, new { @class = "botton", id = "bt5" })
         </div>
     </div>
     <div class="container body-content">
         @RenderBody()
-        <hr />
-        <footer>
-            <p id="copyRight">&copy;湖南留学生联盟 @DateTime.Now.Year - @ViewData["DB"]  湘ICP备1400358号</p>
+        <hr style="width:100%; float:left; margin-top:10%;"/>
+        <footer style="width:100%; float:left; text-align:center;">
+            @Html.ActionLink("湖南留学生联盟", "Login", "Manager", new { }, new { style="text-decoration:none; color: black;"});
+            <p>湘ICP备1400358号</p>
         </footer>
     </div>
 

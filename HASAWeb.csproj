@@ -176,6 +176,7 @@
     <Content Include="Content\Manager_Header.png" />
     <Content Include="Content\Manager_Layout.css" />
     <Content Include="Content\News.css" />
+    <Content Include="Content\QR_Code.jpg" />
     <Content Include="Content\TopBar-Layout-b-BG.png" />
     <Content Include="Content\_Layout.css" />
     <Content Include="favicon.ico" />

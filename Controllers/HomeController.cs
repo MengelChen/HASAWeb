@@ -31,7 +31,7 @@ namespace HASAWeb.Controllers
             int n;
             if (id == null) n = 0;
             else n = (int)id;
-            List<Article> articles = db.Articles.ToList<Article>();
+            List<Article> articles = db.Articles.Where(item => item.Column == "活动新闻").ToList<Article>();
             List<Article> art = new List<Article>();
             if (articles.Count <= NumberOfOnePage) art = articles;
             else
@@ -45,20 +45,48 @@ namespace HASAWeb.Controllers
             return View(art);
         }
 
-        public ActionResult Archieve()
+        public ActionResult Archieve(int? id)
         {
             ViewBag.Message = "HASA Archieve.";
-            List<ColumnView> Columns = new List<ColumnView>();
 
-            return View(Columns);
+            const int NumberOfOnePage = 4;
+            int n;
+            if (id == null) n = 0;
+            else n = (int)id;
+            List<Article> articles = db.Articles.Where(item => item.Column == "活动历程").ToList<Article>();
+            List<Article> art = new List<Article>();
+            if (articles.Count <= NumberOfOnePage) art = articles;
+            else
+            {
+                for (int i = n * NumberOfOnePage; i < (n + 1) * NumberOfOnePage; i++)
+                {
+                    art.Add(articles[i]);
+                }
+            }
+
+            return View(art);
         }
 
-        public ActionResult Experiences()
+        public ActionResult Experiences(int? id)
         {
             ViewBag.Message = "HASA Experiences.";
-            List<ColumnView> Columns = new List<ColumnView>();
 
-            return View(Columns);
+            const int NumberOfOnePage = 4;
+            int n;
+            if (id == null) n = 0;
+            else n = (int)id;
+            List<Article> articles = db.Articles.Where(item => item.Column == "留学经验").ToList<Article>();
+            List<Article> art = new List<Article>();
+            if (articles.Count <= NumberOfOnePage) art = articles;
+            else
+            {
+                for (int i = n * NumberOfOnePage; i < (n + 1) * NumberOfOnePage; i++)
+                {
+                    art.Add(articles[i]);
+                }
+            }
+
+            return View(art);
         }
 
         public ActionResult JoinUs()

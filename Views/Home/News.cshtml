@@ -1,26 +1,19 @@
 ﻿@model List<HASAWeb.Models.Article>
 
 @{
-    ViewBag.Title = "活动新闻";
+    ViewBag.Title = "活动预告";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <link href="~/Content/News.css" rel="stylesheet" />
 
 <div id="board">
+    <div id="top_title" style="margin:3%; margin-left:10%;">活动预告</div>
     @foreach (var m in Model)
     {
-        <div class="title">@m.Title</div>
-        <br />
-        <div class="time">@m.PublishTime</div>
-        <br />
-        <div class="content">@m.Content</div>
-        <br />
-        <a class="more">&lt阅读全文&gt</a>
-        if (m.ArticleId != Model[Model.Count-1].ArticleId)
-        {
-            <hr style="margin: 0px;"/>
-        }
+        <hr />
+        <a class="line_title" href="@m.Link">@m.Title</a>
+        <div class="line_time" style="margin-right:30%; float:right;">@m.PublishTime</div>
     }
     <div id="navi">
         @{

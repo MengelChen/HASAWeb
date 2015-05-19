@@ -65,9 +65,40 @@
 
 #navi{
     margin: 0px;
+    margin-top:10%;
     width:inherit;
     text-align:center;
     font-family: 楷体;
     font-size: 20px;
 }
 
+#top_title{
+    color:#414141;
+    font-family:黑体;
+    font-size:xx-large;
+    font-weight:700;
+    margin:3%;
+    margin-left:5%;
+    text-decoration:none;
+}
+
+.line_title{
+    color:#414141;
+    font-family:黑体;
+    font-size:large;
+    font-weight:700;
+    margin:3%;
+    margin-left:5%;
+    text-decoration:none;
+}
+
+.line_title:hover{
+    text-decoration:underline;
+}
+
+.line_time{
+    color:#414141;
+    font-family:黑体;
+    font-size:small;
+    font-weight:500;
+}
